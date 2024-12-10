@@ -44,3 +44,7 @@ include/divisible/*
 
 build/
 /.vscode
+Pipfile*
+*.ipynb
+*.json
+*.txt
