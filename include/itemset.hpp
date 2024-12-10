@@ -43,6 +43,14 @@ public:
         }
     }
 
+    std::string toString() const {
+        std::string s = "";
+        for (const auto& [sid, range] : occurrences) {
+            s += "Sequence " + std::to_string(sid) + ": [" + std::to_string(range.first) + ", " + std::to_string(range.second) + "]\n";
+        }
+        return s;
+    }
+
     std::map<int, std::pair<int, int>> getOccurrences();
 
 };

@@ -20,14 +20,17 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/lib)
 # add_executable(program main.cpp, ${SRC})
 add_executable(erminer main.cpp)
 add_executable(runItemsetTests tests/test_itemset.cpp)
+add_executable(runRulesTests tests/test_rules.cpp)
 
 target_include_directories(erminer PUBLIC BEFORE ${CMAKE_SOURCE_DIR}/include)
 target_include_directories(runItemsetTests PUBLIC BEFORE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(runRulesTests PUBLIC BEFORE ${CMAKE_SOURCE_DIR}/include)
 
 # załączenie biblioteki do projektu (tak by potem inni też mogli korzystać)
 # najpierw GTest, potem biblioteki stworzone w lib (w tym wypadku proiekt_lib)
 target_link_libraries(erminer PUBLIC erminer_lib)
 target_link_libraries(runItemsetTests PUBLIC GTest::GTest erminer_lib)
+target_link_libraries(runRulesTests PUBLIC GTest::GTest erminer_lib)
 
 
 # Aby uruchomić, mając zainstalowanego cmake-a należy wykonać komendy (w katalogu z głównym CMakeListem):
