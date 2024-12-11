@@ -45,6 +45,6 @@ std::map<int, std::pair<int, int>> Itemset::updateOccurrences(int item, const st
     return updatedOccurrences;
 }
 
-std::map<int, std::pair<int, int>> Itemset::getOccurrences() {
+std::map<int, std::pair<int, int>> Itemset::getOccurrences() const{
     return occurrences;
 }

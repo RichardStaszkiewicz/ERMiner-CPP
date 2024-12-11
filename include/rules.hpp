@@ -1,5 +1,4 @@
 #ifndef RULES
-
 #define RULES
 
 #include <iostream>
@@ -14,11 +13,11 @@
 
 class Rule {
 private:
-    Itemset antecedent;
-    Itemset consequent;
-    double support = -1.0;
-    double confidence = -1.0;
-    std::vector<int> sequences_with_rule;
+    mutable Itemset antecedent;
+    mutable Itemset consequent;
+    mutable double support = -1.0;           // Allow modification in const methods
+    mutable double confidence = -1.0;       // Allow modification in const methods
+    mutable std::vector<int> sequences_with_rule; // Allow modification in const methods
 
 public:
     // Constructor
@@ -36,7 +35,7 @@ public:
     }
 
     // Find sequences where the rule applies
-    void findSequencesWithRule(const std::vector<std::vector<int>>& sdb) {
+    void findSequencesWithRule(const std::vector<std::vector<int>>& sdb) const {
         if (antecedent.getOccurrences().empty()) {
             antecedent.computeOccurrences(sdb);
         }
@@ -53,7 +52,7 @@ public:
     }
 
     // Compute support
-    void computeSupport(const std::vector<std::vector<int>>& sdb) {
+    void computeSupport(const std::vector<std::vector<int>>& sdb) const {
         if (sequences_with_rule.empty()) {
             findSequencesWithRule(sdb);
         }
@@ -61,7 +60,7 @@ public:
     }
 
     // Compute confidence
-    void computeConfidence(const std::vector<std::vector<int>>& sdb) {
+    void computeConfidence(const std::vector<std::vector<int>>& sdb) const {
         if (support < 0) {
             computeSupport(sdb);
         }
@@ -69,7 +68,7 @@ public:
     }
 
     // Check if the rule is frequent
-    bool isFrequent(const std::vector<std::vector<int>>& sdb, double minsup) {
+    bool isFrequent(const std::vector<std::vector<int>>& sdb, double minsup) const {
         if (support < 0) {
             computeSupport(sdb);
         }
@@ -77,7 +76,7 @@ public:
     }
 
     // Check if the rule is valid
-    bool isValid(const std::vector<std::vector<int>>& sdb, double minsup, double minconf) {
+    bool isValid(const std::vector<std::vector<int>>& sdb, double minsup, double minconf) const {
         if (!isFrequent(sdb, minsup)) {
             return false;
         }
@@ -97,14 +96,34 @@ public:
                   << ", confidence: " << confidence << "]" << std::endl;
     }
 
-    std::vector<int> getSequencesWithRule(){
+    std::vector<int> getSequencesWithRule() const {
         return sequences_with_rule;
     }
 
-    Itemset getAntecedent(){
+    const Itemset& getAntecedent() const {
         return antecedent;
     }
+
+    const Itemset& getConsequent() const {
+        return consequent;
+    }
+
+    bool operator<(const Rule& other) const {
+        // Compare the antecedents first, and if they are equal, compare the consequents
+        if (antecedent < other.antecedent) return true;
+        if (other.antecedent < antecedent) return false;
+        return consequent < other.consequent;
+    }
 };
+
+namespace std {
+    template <>
+    struct hash<Rule> {
+        size_t operator()(const Rule& rule) const {
+            return rule.hash();  // Use the hash function defined in Rule
+        }
+    };
+}
 
 
 #endif

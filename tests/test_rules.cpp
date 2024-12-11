@@ -13,6 +13,11 @@ protected:
     };
 };
 
+//Test: Sanity Test
+TEST_F(RuleTest, SanityTest) {
+    EXPECT_EQ(true, true);
+}
+
 // Test: Initialization
 TEST_F(RuleTest, InitializationTest) {
     Itemset antecedent({1, 2});

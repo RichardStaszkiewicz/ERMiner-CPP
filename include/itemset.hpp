@@ -15,6 +15,8 @@ private:
     std::map<int, std::pair<int, int>> occurrences;
 
 public:
+    Itemset() : std::set<int>(), occurrences() {}
+
     // Constructor
     Itemset(const std::vector<int>& elements, const std::map<int, std::pair<int, int>>& initOccurrences = {})
         : std::set<int>(elements.begin(), elements.end()), occurrences(initOccurrences) {}
@@ -51,8 +53,34 @@ public:
         return s;
     }
 
-    std::map<int, std::pair<int, int>> getOccurrences();
+    std::map<int, std::pair<int, int>> getOccurrences() const;
+
+    bool isSubsetOf(const std::vector<int>& sequence) const {
+        auto seq_it = sequence.begin();
+        for (int item : *this) {
+            seq_it = std::find(seq_it, sequence.end(), item);
+            if (seq_it == sequence.end()) {
+                return false; // If any item is not found, it's not a subset
+            }
+        }
+        return true; // All items were found in the sequence in order
+    }
+
+    // Convert the Itemset to a sorted vector
+    std::vector<int> toSortedVector() const {
+        return std::vector<int>(this->begin(), this->end());
+    }
+
 
 };
+
+namespace std {
+    template <>
+    struct hash<Itemset> {
+        size_t operator()(const Itemset& itemset) const {
+            return itemset.hash(); // Use the member hash function you defined
+        }
+    };
+}
 
 #endif

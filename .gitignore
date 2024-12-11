@@ -48,3 +48,4 @@ Pipfile*
 *.ipynb
 *.json
 *.txt
+rules.csv

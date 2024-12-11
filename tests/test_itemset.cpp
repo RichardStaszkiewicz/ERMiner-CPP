@@ -13,6 +13,11 @@ protected:
     }
 };
 
+//Test: Sanity Test
+TEST_F(ItemsetTest, SanityTest) {
+    EXPECT_EQ(true, true);
+}
+
 // Test: Initialization
 TEST_F(ItemsetTest, InitializationTest) {
     std::vector<int> elements = {1, 2};
@@ -79,7 +84,7 @@ TEST_F(ItemsetTest, UpdateOccurrencesTest) {
 
 // Test: Empty Itemset
 TEST_F(ItemsetTest, EmptyItemsetTest) {
-    Itemset itemset({});
+    Itemset itemset;
     EXPECT_THROW(itemset.computeOccurrences(createSampleSDB()), std::logic_error);
 }
 
