@@ -21,7 +21,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
 *.lib
 
 # Executables
@@ -48,4 +47,7 @@ Pipfile*
 *.ipynb
 *.json
 *.txt
-rules.csv
+program
+runERMinerTests
+runItemsetTests
+runRulesTests

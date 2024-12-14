@@ -1,0 +1,75 @@
+\doxysection{rules.\+hpp}
+\hypertarget{rules_8hpp_source}{}\label{rules_8hpp_source}\index{include/rules.hpp@{include/rules.hpp}}
+\mbox{\hyperlink{rules_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ RULES}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#define\ RULES}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemset_8hpp}{itemset.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00030}\mbox{\hyperlink{classRule}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRule}{Rule}}\ \{}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00031}00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00035}\mbox{\hyperlink{classRule_aa8eba6c9965df6ed0b8ba2c970e3419a}{00035}}\ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{classItemset}{Itemset}}\ \mbox{\hyperlink{classRule_aa8eba6c9965df6ed0b8ba2c970e3419a}{antecedent}};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00040}\mbox{\hyperlink{classRule_aa43a0b3bc463247dd4c2f94cf62aaf2e}{00040}}\ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{classItemset}{Itemset}}\ \mbox{\hyperlink{classRule_aa43a0b3bc463247dd4c2f94cf62aaf2e}{consequent}};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00046}\mbox{\hyperlink{classRule_a7451cbdae3e89874837aaa4822c3d27f}{00046}}\ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRule_a7451cbdae3e89874837aaa4822c3d27f}{support}}\ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00052}\mbox{\hyperlink{classRule_a6422405ae23ce693c46e154fb1bbd53e}{00052}}\ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRule_a6422405ae23ce693c46e154fb1bbd53e}{confidence}}\ =\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00057}\mbox{\hyperlink{classRule_ab5662a4071037678e58220f07430092f}{00057}}\ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<int>\ \mbox{\hyperlink{classRule_ab5662a4071037678e58220f07430092f}{sequences\_with\_rule}};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00059}00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00065}\mbox{\hyperlink{classRule_a8c0e77f1deffd0392aa23740f87d878e}{00065}}\ \ \ \ \ \mbox{\hyperlink{classRule_a8c0e77f1deffd0392aa23740f87d878e}{Rule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ ant,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ cons)}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classRule_aa8eba6c9965df6ed0b8ba2c970e3419a}{antecedent}}(ant),\ \mbox{\hyperlink{classRule_aa43a0b3bc463247dd4c2f94cf62aaf2e}{consequent}}(cons)\ \{\}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00072}\mbox{\hyperlink{classRule_aaca5b443c67fbf707b8990e0a4fc64be}{00072}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classRule_aaca5b443c67fbf707b8990e0a4fc64be}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00078}\mbox{\hyperlink{classRule_a41f7ccd767a57ead220c52f3f47ca0c3}{00078}}\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classRule_a41f7ccd767a57ead220c52f3f47ca0c3}{hash}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00084}\mbox{\hyperlink{classRule_ac943a51d764a26ec9b878a216f1d24fd}{00084}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRule_ac943a51d764a26ec9b878a216f1d24fd}{findSequencesWithRule}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00091}\mbox{\hyperlink{classRule_acbed876525ee7393f0664c90143a6967}{00091}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRule_acbed876525ee7393f0664c90143a6967}{computeSupport}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00099}\mbox{\hyperlink{classRule_a497982ff032d0906cba7f67cf2538f80}{00099}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRule_a497982ff032d0906cba7f67cf2538f80}{computeConfidence}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00107}\mbox{\hyperlink{classRule_ae0ebaaefda27c581ceb342b23f3448ca}{00107}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRule_ae0ebaaefda27c581ceb342b23f3448ca}{isFrequent}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb,\ \textcolor{keywordtype}{double}\ minsup)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00116}\mbox{\hyperlink{classRule_a06f0e00e1cd4e180a8a37d954b030892}{00116}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRule_a06f0e00e1cd4e180a8a37d954b030892}{isValid}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb,\ \textcolor{keywordtype}{double}\ minsup,\ \textcolor{keywordtype}{double}\ minconf)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00121}\mbox{\hyperlink{classRule_abb52955f499b90910fe05fadf769d5bd}{00121}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRule_abb52955f499b90910fe05fadf769d5bd}{printRule}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00127}\mbox{\hyperlink{classRule_a0eb1dc2a9a54b4d594a02dc2bd4035ff}{00127}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRule_a0eb1dc2a9a54b4d594a02dc2bd4035ff}{getSupport}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00133}\mbox{\hyperlink{classRule_abc73a9cf900fda624bb6571862ef29a6}{00133}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRule_abc73a9cf900fda624bb6571862ef29a6}{getConfidence}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00139}\mbox{\hyperlink{classRule_ae18a9a2ea167b5f914c4336c5156151f}{00139}}\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classRule_ae18a9a2ea167b5f914c4336c5156151f}{getSequencesWithRule}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00145}\mbox{\hyperlink{classRule_a45a0416e852abfb6791d629693cbd3e9}{00145}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ \mbox{\hyperlink{classRule_a45a0416e852abfb6791d629693cbd3e9}{getAntecedent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00151}\mbox{\hyperlink{classRule_a7c9b1f4d90a5d19928956f6bb04ca807}{00151}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ \mbox{\hyperlink{classRule_a7c9b1f4d90a5d19928956f6bb04ca807}{getConsequent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00159}\mbox{\hyperlink{classRule_abb4f10410c860ccef0ffb525eb9a8a2d}{00159}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRule_abb4f10410c860ccef0ffb525eb9a8a2d}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRule}{Rule}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00160}00160\ \};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00166}00166\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacestd}{std}}\ \{}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00168}\mbox{\hyperlink{structstd_1_1hash_3_01Rule_01_4}{00168}}\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{classRule}{Rule}}>\ \{}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00174}\mbox{\hyperlink{structstd_1_1hash_3_01Rule_01_4_a5a45147f697c7cd7e1d20c1ef4c8753c}{00174}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structstd_1_1hash_3_01Rule_01_4_a5a45147f697c7cd7e1d20c1ef4c8753c}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRule}{Rule}}\&\ rule)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rule.\mbox{\hyperlink{classRule_a41f7ccd767a57ead220c52f3f47ca0c3}{hash}}();}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00177}00177\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{rules_8hpp_source_l00180}00180\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
