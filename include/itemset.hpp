@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iterator>
 #include <stdexcept>
+#include <sstream>
 
 class Itemset : public std::set<int> {
 private:
@@ -46,11 +47,23 @@ public:
     }
 
     std::string toString() const {
-        std::string s = "";
-        for (const auto& [sid, range] : occurrences) {
-            s += "Sequence " + std::to_string(sid) + ": [" + std::to_string(range.first) + ", " + std::to_string(range.second) + "]\n";
+        // std::string s = "";
+        // for (const auto& [sid, range] : occurrences) {
+        //     s += "Sequence " + std::to_string(sid) + ": [" + std::to_string(range.first) + ", " + std::to_string(range.second) + "]\n";
+        // }
+        std::ostringstream oss;
+
+        for (std::set<int>::const_iterator it = this->cbegin(); it != this->cend(); ++it) {
+            oss << *it;
+            if (std::next(it) != this->cend()) { // Add a separator if it's not the last element
+                oss << " ";
+            }
         }
-        return s;
+
+        // Convert the stream to a string
+        std::string result = oss.str();
+        return "Itemset{" + result + "}";
+        //return s;
     }
 
     std::map<int, std::pair<int, int>> getOccurrences() const;

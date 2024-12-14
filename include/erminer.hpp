@@ -11,11 +11,11 @@
 #include <fstream>
 #include <sstream>
 #include <iomanip>
+#include <numeric>
 #include "itemset.hpp"
 #include "rules.hpp"
 
-class ERMiner 
-{
+class ERMiner {
 private:
     double minsup;
     double minconf;
@@ -140,12 +140,54 @@ public:
         }
     }
 
+    // Right search
+    void _rightSearch(const std::set<Rule>& req, const std::vector<std::vector<int>>& sdb) {
+        std::set<Rule> req1;
+        for (auto it1 = req.begin(); it1 != req.end(); ++it1) {
+            for (auto it2 = std::next(it1); it2 != req.end(); ++it2) {
+                const auto& r = *it1;
+                const auto& s = *it2;
+
+                auto xr = r.getAntecedent().toSortedVector();
+                auto xs = s.getAntecedent().toSortedVector();
+
+                if (std::equal(xr.begin(), xr.end() - 1, xs.begin())) {
+                    int c = xr.back();
+                    int d = xs.back();
+                    if (_SCM[{std::min(c, d), std::max(c, d)}] >= minsup) {
+                        Itemset xrud(xr);
+                        xrud.insert(d);
+                        Rule t(xrud, r.getConsequent());
+                        if (t.isFrequent(sdb, minsup)) {
+                            req1.insert(t);
+                            _left_store[t.getAntecedent()].insert(t);
+                            if (t.isValid(sdb, minsup, minconf)) {
+                                valid_rules.insert(t);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!req1.empty()) {
+            _rightSearch(req1, sdb);
+        }
+    }
+
     // Fit the model
     void fit(const std::vector<std::vector<int>>& sdb) {
         auto [leq, req] = _firstScan(sdb);
         if (!single_consequent) {
             for (const auto& [_, H] : leq) {
                 _leftSearch(H, sdb);
+            }
+        }
+        for (const auto& [_, J] : req) {
+            _rightSearch(J, sdb);
+        }
+        if(!single_consequent) {
+            for(const auto& [_, K] : _left_store) {
+                _leftSearch(K, sdb);
             }
         }
     }
@@ -163,8 +205,13 @@ public:
         file.close();
     }
 
+    // Getter for valid rules
     std::set<Rule> getValidRules() const {
         return valid_rules;
+    }
+
+    bool getSingleConsequent() const {
+        return single_consequent;
     }
 };
 

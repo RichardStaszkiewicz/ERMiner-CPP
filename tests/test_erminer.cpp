@@ -73,6 +73,34 @@ TEST_F(ERMinerTest, FirstScanTest) {
     EXPECT_GT(req.size(), 0); // Should have some right equivalence classes
 }
 
+// Test: Right search
+TEST_F(ERMinerTest, RightSearchTest) {
+    ERMiner miner(0.5, 0.5); // minsup = 0.5, minconf = 0.5
+
+    // Define initial equivalence classes
+    std::set<Rule> rules = {
+        Rule(Itemset({1}), Itemset({2})),
+        Rule(Itemset({1}), Itemset({3})),
+        Rule(Itemset({2}), Itemset({3}))
+    };
+    auto [leq, req] = miner._firstScan(sdb);
+    if (!miner.getSingleConsequent()) {
+        for (const auto& [_, H] : leq) {
+            miner._leftSearch(H, sdb);
+        }
+    }
+    EXPECT_EQ(miner.getValidRules().size(), 19);
+    for (const auto& [_, J] : req) {
+            miner._rightSearch(J, sdb);
+    }
+    EXPECT_EQ(miner.getValidRules().size(), 29);
+
+    for (const auto& rule : miner.getValidRules()) {
+        EXPECT_GE(rule.getConfidence(), 0.5); // Confidence should meet minimum threshold
+        EXPECT_GE(rule.getSupport(), 0.5);    // Support should meet minimum threshold
+    }
+}
+
 // Test: Fit the model
 TEST_F(ERMinerTest, FitTest) {
     ERMiner miner(0.5, 0.5); // minsup = 0.5, minconf = 0.5
