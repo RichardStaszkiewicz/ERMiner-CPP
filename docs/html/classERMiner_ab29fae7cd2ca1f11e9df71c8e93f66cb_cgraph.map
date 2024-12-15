@@ -1,0 +1,5 @@
+<map id="ERMiner::cooccurs" name="ERMiner::cooccurs">
+<area shape="rect" id="Node000001" title="Computes the co&#45;occurrence of two itemsets in a sequence database." alt="" coords="5,5,139,31"/>
+<area shape="rect" id="Node000002" href="$classItemset.html#aaf4d824715835cf743eb1ce22267355f" title="Checks if the Itemset is a subset of a given sequence." alt="" coords="187,5,325,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+</map>

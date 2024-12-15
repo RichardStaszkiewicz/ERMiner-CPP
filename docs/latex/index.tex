@@ -1,0 +1,183 @@
+\chapter{ERMiner\+: A C++ Implementation for Rule Mining}
+\hypertarget{index}{}\label{index}\index{ERMiner: A C++ Implementation for Rule Mining@{ERMiner: A C++ Implementation for Rule Mining}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+
+
+\doxylink{classERMiner}{ERMiner} is a C++ implementation of a frequent sequential rule mining algorithm. It is designed to efficiently discover frequent rules in sequential databases. The project supports operations such as equivalence class generation, rule validation, and exporting results to a CSV file.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Frequent \doxylink{classRule}{Rule} Mining\+: Identify rules that meet user-\/defined minimum support (minsup) and confidence (minconf) thresholds.
+\item Equivalence Classes\+:
+\item Left Equivalence Class (\+\_\+find\+Left\+Equivalence\+Classes)\+: Groups rules by their antecedents.
+\item Right Equivalence Class (\+\_\+find\+Right\+Equivalence\+Classes)\+: Groups rules by their consequents.
+\item Recursive Search\+:
+\item \+\_\+left\+Search\+: Expands rules by appending items to the consequent.
+\item \+\_\+right\+Search\+: Expands rules by appending items to the antecedent.
+\item CSV Export\+: Save the discovered rules to a CSV file with their respective support and confidence values.
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ include/}
+\DoxyCodeLine{│\ \ \ ├──\ erminer.hpp\ \ \ \ \ \ \ \#\ Core\ ERMiner\ class}
+\DoxyCodeLine{│\ \ \ ├──\ itemset.hpp\ \ \ \ \ \ \ \#\ Itemset\ class\ for\ handling\ sets\ of\ items}
+\DoxyCodeLine{│\ \ \ ├──\ rules.hpp\ \ \ \ \ \ \ \ \ \#\ Rule\ class\ for\ storing\ and\ validating\ rules}
+\DoxyCodeLine{├──\ lib/}
+\DoxyCodeLine{│\ \ \ ├──\ CMakeLists.txt\ \ \ \ \#\ CMake\ build\ configuration}
+\DoxyCodeLine{│\ \ \ ├──\ liberminer.a\ \ \ \ \ \ \#\ Compiled\ static\ library\ for\ the\ project}
+\DoxyCodeLine{├──\ source/}
+\DoxyCodeLine{│\ \ \ ├──\ erminer.cpp\ \ \ \ \ \ \ \#\ Core\ ERMiner\ class\ implementation}
+\DoxyCodeLine{│\ \ \ ├──\ itemset.cpp\ \ \ \ \ \ \ \#\ Itemset\ class\ implementation}
+\DoxyCodeLine{│\ \ \ ├──\ rules.cpp\ \ \ \ \ \ \ \ \ \#\ Rule\ class\ implementation}
+\DoxyCodeLine{├──\ tests/}
+\DoxyCodeLine{│\ \ \ ├──\ test\_erminer.cpp\ \ \#\ GTest-\/based\ unit\ tests}
+\DoxyCodeLine{│\ \ \ ├──\ test\_itemset.cpp\ \ \#\ GTest-\/based\ unit\ tests}
+\DoxyCodeLine{│\ \ \ ├──\ test\_rules.cpp\ \ \ \ \#\ GTest-\/based\ unit\ tests}
+\DoxyCodeLine{├──\ doc/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Directory\ for\ documentation}
+\DoxyCodeLine{│\ \ \ ├──\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ GTest-\/based\ unit\ tests}
+\DoxyCodeLine{├──\ .gitignore\ \ \ \ \ \ \ \ \ \ \ \ \#\ Definition\ of\ files\ excluded\ from\ repository}
+\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Project\ description\ and\ usage\ instructions}
+\DoxyCodeLine{├──\ main.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Example\ program\ using\ the\ \`{}erminer`\ library}
+\DoxyCodeLine{├──\ LICENSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Project\ license}
+\DoxyCodeLine{└──\ CMakeLists.txt\ \ \ \ \ \ \ \ \#\ CMake\ build\ configuration}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item C++17\+: Required for modern C++ features like structured bindings and {\ttfamily std\+::optional}.
+\item Google Test (GTest)\+: Used for unit testing the implementation.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{index_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Ensure you have a C++17-\/compatible compiler (e.\+g., GCC 7+ or Clang 5+).
+\item Install Google Test if not already available.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{index_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Clone the repository\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/yourusername/erminer-\/cpp.git}
+\DoxyCodeLine{cd\ erminer-\/cpp}
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Create a build directory and run CMake\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+\DoxyCodeLine{cmake\ ..}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Run the unit tests\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./runItemsetTests}
+\DoxyCodeLine{./runRulesTests}
+\DoxyCodeLine{./runERMinerTests}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Example Input}{Example Input}}\label{index_autotoc_md8}
+The input is a sequence database represented as a vector of vectors, where each inner vector is a sequence of integers.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<std::vector<int>>\ sdb\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \{1,\ 2,\ 3,\ 4,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{2,\ 3,\ 4,\ 1,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{3,\ 1,\ 4,\ 2\}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{\texorpdfstring{Discovering Rules}{Discovering Rules}}\label{index_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{erminer_8hpp}{erminer.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Set\ minimum\ support\ and\ confidence\ thresholds}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minsup\ =\ 0.5;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minconf\ =\ 0.5;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Initialize\ the\ ERMiner\ instance}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classERMiner}{ERMiner}}\ miner(minsup,\ minconf);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Fit\ the\ model\ on\ the\ sequence\ database}}
+\DoxyCodeLine{\ \ \ \ miner.fit(sdb);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Retrieve\ the\ discovered\ rules}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ rules\ =\ miner.getValidRules();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rule\ :\ rules)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ rule.printRule();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Export\ rules\ to\ a\ CSV\ file}}
+\DoxyCodeLine{\ \ \ \ miner.rulesToCsv(\textcolor{stringliteral}{"{}rules.csv"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{CSV Output}{CSV Output}}\label{index_autotoc_md10}
+The rules are saved in a CSV file named rules.\+csv (or any user-\/defined name). The file contains columns for antecedents, consequents, support, and confidence\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{antecedent,consequent,support,confidence}
+\DoxyCodeLine{"{}Itemset\{1\}"{},"{}Itemset\{2\}"{},1.000000,1.000000}
+\DoxyCodeLine{"{}Itemset\{1\}"{},"{}Itemset\{2\ 4\}"{},0.666667,0.666667}
+\DoxyCodeLine{"{}Itemset\{1\}"{},"{}Itemset\{4\}"{},0.666667,0.666667}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Fork the repository.}{Fork the repository.}}\label{index_autotoc_md11}
+
+\begin{DoxyEnumerate}
+\item Create a new branch for your feature or bug fix.
+\item Submit a pull request with a clear description of your changes.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md12}
+This project is licensed under the \href{./LICENSE}{\texttt{ GNU GENERAL PUBLIC LICENSE}}\hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{References}{References}}\label{index_autotoc_md13}
+The algorithm is based on a paper\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@inproceedings\{fournier2014erminer,}
+\DoxyCodeLine{\ \ title=\{ERMiner:\ sequential\ rule\ mining\ using\ equivalence\ classes\},}
+\DoxyCodeLine{\ \ author=\{Fournier-\/Viger,\ Philippe\ and\ Gueniche,\ Ted\ and\ Zida,\ Souleymane\ and\ Tseng,\ Vincent\ S\},}
+\DoxyCodeLine{\ \ booktitle=\{Advances\ in\ Intelligent\ Data\ Analysis\ XIII:\ 13th\ International\ Symposium,\ IDA\ 2014,\ Leuven,\ Belgium,\ October\ 30-\/-\/November\ 1,\ 2014.\ Proceedings\ 13\},}
+\DoxyCodeLine{\ \ pages=\{108-\/-\/119\},}
+\DoxyCodeLine{\ \ year=\{2014\},}
+\DoxyCodeLine{\ \ organization=\{Springer\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+If the current implementation is to be cited, please refer as\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@misc\{Charles2013,}
+\DoxyCodeLine{\ \ author\ =\ \{Richard\ Staszkiewicz\},}
+\DoxyCodeLine{\ \ title\ =\ \{ERMiner:\ Cpp\},}
+\DoxyCodeLine{\ \ year\ =\ \{2024\},}
+\DoxyCodeLine{\ \ publisher\ =\ \{GitHub\},}
+\DoxyCodeLine{\ \ journal\ =\ \{GitHub\ repository\},}
+\DoxyCodeLine{\ \ howpublished\ =\ \{\(\backslash\)url\{https://github.com/RichardStaszkiewicz/ERMiner-\/CPP\}\},}
+\DoxyCodeLine{\ \ commit\ =\ \{4f57d6a0e4c030202a07a60bc1bb1ed1544bf679\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Acknowledgements}{Acknowledgements}}\label{index_autotoc_md14}
+This project is inspired by the Python implementation of the \doxylink{classERMiner}{ERMiner} algorithm by \href{https://github.com/alessandroaere}{\texttt{ alessandroaere}} and aims to provide a more efficient C++ solution for rule mining. 

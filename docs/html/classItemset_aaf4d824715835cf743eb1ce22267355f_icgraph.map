@@ -1,0 +1,5 @@
+<map id="Itemset::isSubsetOf" name="Itemset::isSubsetOf">
+<area shape="rect" id="Node000001" title="Checks if the Itemset is a subset of a given sequence." alt="" coords="187,5,325,31"/>
+<area shape="rect" id="Node000002" href="$classERMiner.html#ab29fae7cd2ca1f11e9df71c8e93f66cb" title="Computes the co&#45;occurrence of two itemsets in a sequence database." alt="" coords="5,5,139,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,21,139,21,139,16,171,16"/>
+</map>

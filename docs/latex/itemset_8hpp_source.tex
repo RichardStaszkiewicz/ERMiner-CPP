@@ -1,0 +1,57 @@
+\doxysection{itemset.\+hpp}
+\hypertarget{itemset_8hpp_source}{}\label{itemset_8hpp_source}\index{include/itemset.hpp@{include/itemset.hpp}}
+\mbox{\hyperlink{itemset_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ ITEMSET}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#define\ ITEMSET}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00031}\mbox{\hyperlink{classItemset}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classItemset}{Itemset}}\ :\ \textcolor{keyword}{public}\ std::set<int>\ \{}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00038}\mbox{\hyperlink{classItemset_a036ab0e1872465af684f76e103d8bf00}{00038}}\ \ \ \ \ std::map<int,\ std::pair<int,\ int>>\ \mbox{\hyperlink{classItemset_a036ab0e1872465af684f76e103d8bf00}{occurrences}};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00040}00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00045}\mbox{\hyperlink{classItemset_a5d09c258cd26568e9904b92a3722c5c9}{00045}}\ \ \ \ \ \mbox{\hyperlink{classItemset_a5d09c258cd26568e9904b92a3722c5c9}{Itemset}}()\ :\ \mbox{\hyperlink{namespacestd}{std}}::set<int>(),\ \mbox{\hyperlink{classItemset_a036ab0e1872465af684f76e103d8bf00}{occurrences}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00052}\mbox{\hyperlink{classItemset_a5fadb33bad713b28e8b7cc506ef91513}{00052}}\ \ \ \ \ \mbox{\hyperlink{classItemset_a5fadb33bad713b28e8b7cc506ef91513}{Itemset}}(\textcolor{keyword}{const}\ std::vector<int>\&\ elements,\ \textcolor{keyword}{const}\ std::map<\textcolor{keywordtype}{int},\ std::pair<int,\ int>>\&\ initOccurrences\ =\ \{\})}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00053}00053\ \ \ \ \ :\ \mbox{\hyperlink{namespacestd}{std}}::set<int>(elements.begin(),\ elements.end()),\ \mbox{\hyperlink{classItemset_a036ab0e1872465af684f76e103d8bf00}{occurrences}}(initOccurrences)\ \{\}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00061}\mbox{\hyperlink{classItemset_acc8325b8fe7289c6662465361aa98942}{00061}}\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classItemset_acc8325b8fe7289c6662465361aa98942}{hash}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00068}\mbox{\hyperlink{classItemset_a0b4793caa43082fe7a9f8544a7b303bf}{00068}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classItemset_a0b4793caa43082fe7a9f8544a7b303bf}{computeOccurrences}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00076}\mbox{\hyperlink{classItemset_a2ba1c370664cc6d1ce3eb73a5a5c391b}{00076}}\ \ \ \ \ std::map<int,\ std::pair<int,\ int>>\ \mbox{\hyperlink{classItemset_a2ba1c370664cc6d1ce3eb73a5a5c391b}{updateOccurrences}}(\textcolor{keywordtype}{int}\ item,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00082}\mbox{\hyperlink{classItemset_abb2b162418256fc4acb031e0d9247e33}{00082}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classItemset_abb2b162418256fc4acb031e0d9247e33}{printOccurrences}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00088}\mbox{\hyperlink{classItemset_a4b8735c1b8f15e7245b8e69557e1a8d3}{00088}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classItemset_a4b8735c1b8f15e7245b8e69557e1a8d3}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00094}\mbox{\hyperlink{classItemset_a9ac544d3b2d78bbff0db70768c3e66c8}{00094}}\ \ \ \ \ std::map<int,\ std::pair<int,\ int>>\ \mbox{\hyperlink{classItemset_a9ac544d3b2d78bbff0db70768c3e66c8}{getOccurrences}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00101}\mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{00101}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{isSubsetOf}}(\textcolor{keyword}{const}\ std::vector<int>\&\ sequence)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00107}\mbox{\hyperlink{classItemset_aa8881ac27c78f410eeff710c931370bd}{00107}}\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classItemset_aa8881ac27c78f410eeff710c931370bd}{toSortedVector}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00108}00108\ \};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00114}00114\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacestd}{std}}\ \{}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00116}\mbox{\hyperlink{structstd_1_1hash_3_01Itemset_01_4}{00116}}\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{classItemset}{Itemset}}>\ \{}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00122}\mbox{\hyperlink{structstd_1_1hash_3_01Itemset_01_4_a41da9ffc5ac52e4c6857365a80ac5584}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structstd_1_1hash_3_01Itemset_01_4_a41da9ffc5ac52e4c6857365a80ac5584}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ itemset)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itemset.\mbox{\hyperlink{classItemset_acc8325b8fe7289c6662465361aa98942}{hash}}();}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00125}00125\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{itemset_8hpp_source_l00128}00128\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

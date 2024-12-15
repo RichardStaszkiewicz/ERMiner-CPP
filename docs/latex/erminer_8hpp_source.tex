@@ -1,0 +1,75 @@
+\doxysection{erminer.\+hpp}
+\hypertarget{erminer_8hpp_source}{}\label{erminer_8hpp_source}\index{include/erminer.hpp@{include/erminer.hpp}}
+\mbox{\hyperlink{erminer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#ifndef\ ERMINER}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#define\ ERMINER}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemset_8hpp}{itemset.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rules_8hpp}{rules.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00039}\mbox{\hyperlink{classERMiner}{00039}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classERMiner}{ERMiner}}\ \{}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00040}00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00044}\mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{00044}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00049}\mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{00049}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00054}\mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{00054}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00060}\mbox{\hyperlink{classERMiner_a503d7c483bf79ccc658f9bfae91e3e59}{00060}}\ \ \ \ \ std::unordered\_map<Itemset,\ std::set<Rule>>\ \mbox{\hyperlink{classERMiner_a503d7c483bf79ccc658f9bfae91e3e59}{\_left\_store}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00065}\mbox{\hyperlink{classERMiner_a6fc150eb669254dba5140d3558af8558}{00065}}\ \ \ \ \ std::set<Rule>\ \mbox{\hyperlink{classERMiner_a6fc150eb669254dba5140d3558af8558}{valid\_rules}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00071}\mbox{\hyperlink{classERMiner_adc8782d81239b340a41c2eda4a9e17f8}{00071}}\ \ \ \ \ std::map<std::pair<int,\ int>,\ \textcolor{keywordtype}{double}>\ \mbox{\hyperlink{classERMiner_adc8782d81239b340a41c2eda4a9e17f8}{\_SCM}};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00073}00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00080}\mbox{\hyperlink{classERMiner_a6d336431f767c59fa3d403e287cd360d}{00080}}\ \ \ \ \ \mbox{\hyperlink{classERMiner_a6d336431f767c59fa3d403e287cd360d}{ERMiner}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}}\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}(\mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}),\ \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}(\mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}),\ \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}}(\mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00090}\mbox{\hyperlink{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb}{00090}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb}{cooccurs}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classItemset}{Itemset}}\&\ b,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb)\ \{}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ sdb)\ \{}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.\mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{isSubsetOf}}(s)\ \&\&\ b.\mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{isSubsetOf}}(s))\ \{}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(count)\ /\ sdb.size();}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00107}\mbox{\hyperlink{classERMiner_a89ab5ae76f9af3f0d71e2bb91952f3bd}{00107}}\ \ \ \ \ std::map<Itemset,\ std::set<Rule>>\ \mbox{\hyperlink{classERMiner_a89ab5ae76f9af3f0d71e2bb91952f3bd}{\_findLeftEquivalenceClasses}}(}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ std::set<Rule>\&\ rules,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00117}\mbox{\hyperlink{classERMiner_a1c25100c42dbb2b1a6c9e28fda8591fb}{00117}}\ \ \ \ \ std::map<Itemset,\ std::set<Rule>>\ \mbox{\hyperlink{classERMiner_a1c25100c42dbb2b1a6c9e28fda8591fb}{\_findRightEquivalenceClasses}}(}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ std::set<Rule>\&\ rules,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00125}\mbox{\hyperlink{classERMiner_a9cc6dd229602ea45476d73b9388fda78}{00125}}\ \ \ \ \ std::pair<std::map<Itemset,\ std::set<Rule>>,\ std::map<Itemset,\ std::set<Rule>>>\ \mbox{\hyperlink{classERMiner_a9cc6dd229602ea45476d73b9388fda78}{\_firstScan}}(}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00133}\mbox{\hyperlink{classERMiner_a2f33d276ff9672cc59387e7b877ae9a9}{00133}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classERMiner_a2f33d276ff9672cc59387e7b877ae9a9}{\_leftSearch}}(\textcolor{keyword}{const}\ std::set<Rule>\&\ leq,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00140}\mbox{\hyperlink{classERMiner_a69d576b2a50b65a3d750155aacf46b84}{00140}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classERMiner_a69d576b2a50b65a3d750155aacf46b84}{\_rightSearch}}(\textcolor{keyword}{const}\ std::set<Rule>\&\ req,\ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00146}\mbox{\hyperlink{classERMiner_a3a0d8dbcefef4d07c6fe4a4b59310aed}{00146}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classERMiner_a3a0d8dbcefef4d07c6fe4a4b59310aed}{fit}}(\textcolor{keyword}{const}\ std::vector<std::vector<int>>\&\ sdb);}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00152}\mbox{\hyperlink{classERMiner_a06e8e4bbbb88973f4588858d6e90f916}{00152}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classERMiner_a06e8e4bbbb88973f4588858d6e90f916}{rulesToCsv}}(\textcolor{keyword}{const}\ std::string\&\ csvFile)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00158}\mbox{\hyperlink{classERMiner_a03c2416d8647b3e534fa15935e17676d}{00158}}\ \ \ \ \ std::set<Rule>\ \mbox{\hyperlink{classERMiner_a03c2416d8647b3e534fa15935e17676d}{getValidRules}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00164}\mbox{\hyperlink{classERMiner_a462dbef0998f4e8cdef50323810d28a9}{00164}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classERMiner_a462dbef0998f4e8cdef50323810d28a9}{getSingleConsequent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00165}00165\ \};}
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{erminer_8hpp_source_l00167}00167\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+<map id="include/itemset.hpp" name="include/itemset.hpp">
+<area shape="rect" id="Node000001" title="Declaration of the Itemset class for handling itemsets and their occurrences." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$erminer_8hpp.html" title="Declaration of the ERMiner class for extracting association rules from sequence databases." alt="" coords="6,153,139,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,46,52,79,52,99,55,119,68,151,63,153,50,120,46,100,47,79,58,44"/>
+<area shape="rect" id="Node000003" href="$rules_8hpp.html" title="Declaration of the Rule class for association rule representation and evaluation." alt="" coords="62,79,182,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="92,42,116,77,111,80,87,45"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="107,119,83,154,79,151,103,116"/>
+</map>

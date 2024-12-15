@@ -1,0 +1,400 @@
+\doxysection{ERMiner Class Reference}
+\hypertarget{classERMiner}{}\label{classERMiner}\index{ERMiner@{ERMiner}}
+
+
+Implements the \doxylink{classERMiner}{ERMiner} algorithm for efficient rule extraction.  
+
+
+
+
+{\ttfamily \#include $<$erminer.\+hpp$>$}
+
+
+
+Collaboration diagram for ERMiner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classERMiner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classERMiner_a6d336431f767c59fa3d403e287cd360d}{ERMiner}} (double \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}, double \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}, bool \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\+\_\+consequent}}=false)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classERMiner}{ERMiner} class. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ \mbox{\hyperlink{classERMiner_a89ab5ae76f9af3f0d71e2bb91952f3bd}{\+\_\+find\+Left\+Equivalence\+Classes}} (int i, const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&rules, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Finds left equivalence classes for a given rule size. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ \mbox{\hyperlink{classERMiner_a1c25100c42dbb2b1a6c9e28fda8591fb}{\+\_\+find\+Right\+Equivalence\+Classes}} (int i, const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&rules, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Finds right equivalence classes for a given rule size. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$, std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ $>$ \mbox{\hyperlink{classERMiner_a9cc6dd229602ea45476d73b9388fda78}{\+\_\+first\+Scan}} (const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Performs the first scan of the sequence database to initialize equivalence classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classERMiner_a2f33d276ff9672cc59387e7b877ae9a9}{\+\_\+left\+Search}} (const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&leq, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Conducts a left equivalence class search. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classERMiner_a69d576b2a50b65a3d750155aacf46b84}{\+\_\+right\+Search}} (const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&req, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Conducts a right equivalence class search. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classERMiner_a3a0d8dbcefef4d07c6fe4a4b59310aed}{fit}} (const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Fits the \doxylink{classERMiner}{ERMiner} model to a sequence database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classERMiner_a06e8e4bbbb88973f4588858d6e90f916}{rules\+To\+Csv}} (const std\+::string \&csv\+File) const
+\begin{DoxyCompactList}\small\item\em Exports the valid rules to a CSV file. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \mbox{\hyperlink{classERMiner_a03c2416d8647b3e534fa15935e17676d}{get\+Valid\+Rules}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the set of valid rules. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classERMiner_a462dbef0998f4e8cdef50323810d28a9}{get\+Single\+Consequent}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the single consequent mode is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb}{cooccurs}} (const \mbox{\hyperlink{classItemset}{Itemset}} \&a, const \mbox{\hyperlink{classItemset}{Itemset}} \&b, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&sdb)
+\begin{DoxyCompactList}\small\item\em Computes the co-\/occurrence of two itemsets in a sequence database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}
+\begin{DoxyCompactList}\small\item\em Minimum support threshold. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}
+\begin{DoxyCompactList}\small\item\em Minimum confidence threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\+\_\+consequent}}
+\begin{DoxyCompactList}\small\item\em Whether to generate rules with a single consequent item. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ \mbox{\hyperlink{classERMiner_a503d7c483bf79ccc658f9bfae91e3e59}{\+\_\+left\+\_\+store}}
+\begin{DoxyCompactList}\small\item\em Left store for managing equivalence classes during the left search. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \mbox{\hyperlink{classERMiner_a6fc150eb669254dba5140d3558af8558}{valid\+\_\+rules}}
+\begin{DoxyCompactList}\small\item\em Set of valid rules discovered by the algorithm. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::pair$<$ int, int $>$, double $>$ \mbox{\hyperlink{classERMiner_adc8782d81239b340a41c2eda4a9e17f8}{\+\_\+\+SCM}}
+\begin{DoxyCompactList}\small\item\em Support count map for item pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{classERMiner}{ERMiner} algorithm for efficient rule extraction. 
+
+The \doxylink{classERMiner}{ERMiner} class uses equivalence class-\/based search to mine association rules from sequence databases, with customizable support and confidence thresholds. 
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classERMiner_a6d336431f767c59fa3d403e287cd360d}\index{ERMiner@{ERMiner}!ERMiner@{ERMiner}}
+\index{ERMiner@{ERMiner}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{ERMiner()}{ERMiner()}}
+{\footnotesize\ttfamily \label{classERMiner_a6d336431f767c59fa3d403e287cd360d} 
+ERMiner\+::\+ERMiner (\begin{DoxyParamCaption}\item[{double}]{minsup}{, }\item[{double}]{minconf}{, }\item[{bool}]{single\+\_\+consequent}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{classERMiner}{ERMiner} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minsup} & Minimum support threshold. \\
+\hline
+{\em minconf} & Minimum confidence threshold. \\
+\hline
+{\em single\+\_\+consequent} & Whether to generate rules with a single consequent (default\+: false). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}(\mbox{\hyperlink{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}{minsup}}),\ \mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}(\mbox{\hyperlink{classERMiner_a77f099054bf11c9621e8f3be1a28e458}{minconf}}),\ \mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}}(\mbox{\hyperlink{classERMiner_a53c0216edd36c4d55777435d42dd33dc}{single\_consequent}})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classERMiner_a89ab5ae76f9af3f0d71e2bb91952f3bd}\index{ERMiner@{ERMiner}!\_findLeftEquivalenceClasses@{\_findLeftEquivalenceClasses}}
+\index{\_findLeftEquivalenceClasses@{\_findLeftEquivalenceClasses}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_findLeftEquivalenceClasses()}{\_findLeftEquivalenceClasses()}}
+{\footnotesize\ttfamily \label{classERMiner_a89ab5ae76f9af3f0d71e2bb91952f3bd} 
+std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ ERMiner\+::\+\_\+find\+Left\+Equivalence\+Classes (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&}]{rules}{, }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Finds left equivalence classes for a given rule size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The size of the antecedent. \\
+\hline
+{\em rules} & The set of rules to process. \\
+\hline
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of itemsets to their corresponding left equivalence class rules. 
+\end{DoxyReturn}
+\Hypertarget{classERMiner_a1c25100c42dbb2b1a6c9e28fda8591fb}\index{ERMiner@{ERMiner}!\_findRightEquivalenceClasses@{\_findRightEquivalenceClasses}}
+\index{\_findRightEquivalenceClasses@{\_findRightEquivalenceClasses}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_findRightEquivalenceClasses()}{\_findRightEquivalenceClasses()}}
+{\footnotesize\ttfamily \label{classERMiner_a1c25100c42dbb2b1a6c9e28fda8591fb} 
+std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ ERMiner\+::\+\_\+find\+Right\+Equivalence\+Classes (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&}]{rules}{, }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Finds right equivalence classes for a given rule size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The size of the consequent. \\
+\hline
+{\em rules} & The set of rules to process. \\
+\hline
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of itemsets to their corresponding right equivalence class rules. 
+\end{DoxyReturn}
+\Hypertarget{classERMiner_a9cc6dd229602ea45476d73b9388fda78}\index{ERMiner@{ERMiner}!\_firstScan@{\_firstScan}}
+\index{\_firstScan@{\_firstScan}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_firstScan()}{\_firstScan()}}
+{\footnotesize\ttfamily \label{classERMiner_a9cc6dd229602ea45476d73b9388fda78} 
+std\+::pair$<$ std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$, std\+::map$<$ \mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ $>$ $>$ ERMiner\+::\+\_\+first\+Scan (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Performs the first scan of the sequence database to initialize equivalence classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair of maps containing left and right equivalence classes. 
+\end{DoxyReturn}
+\Hypertarget{classERMiner_a2f33d276ff9672cc59387e7b877ae9a9}\index{ERMiner@{ERMiner}!\_leftSearch@{\_leftSearch}}
+\index{\_leftSearch@{\_leftSearch}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_leftSearch()}{\_leftSearch()}}
+{\footnotesize\ttfamily \label{classERMiner_a2f33d276ff9672cc59387e7b877ae9a9} 
+void ERMiner\+::\+\_\+left\+Search (\begin{DoxyParamCaption}\item[{const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&}]{leq}{, }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Conducts a left equivalence class search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leq} & The left equivalence class rules to process. \\
+\hline
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classERMiner_a69d576b2a50b65a3d750155aacf46b84}\index{ERMiner@{ERMiner}!\_rightSearch@{\_rightSearch}}
+\index{\_rightSearch@{\_rightSearch}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_rightSearch()}{\_rightSearch()}}
+{\footnotesize\ttfamily \label{classERMiner_a69d576b2a50b65a3d750155aacf46b84} 
+void ERMiner\+::\+\_\+right\+Search (\begin{DoxyParamCaption}\item[{const std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ \&}]{req}{, }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Conducts a right equivalence class search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The right equivalence class rules to process. \\
+\hline
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb}\index{ERMiner@{ERMiner}!cooccurs@{cooccurs}}
+\index{cooccurs@{cooccurs}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{cooccurs()}{cooccurs()}}
+{\footnotesize\ttfamily \label{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb} 
+static double ERMiner\+::cooccurs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItemset}{Itemset}} \&}]{a}{, }\item[{const \mbox{\hyperlink{classItemset}{Itemset}} \&}]{b}{, }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Computes the co-\/occurrence of two itemsets in a sequence database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first itemset. \\
+\hline
+{\em b} & The second itemset. \\
+\hline
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The co-\/occurrence support value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ s\ :\ sdb)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.\mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{isSubsetOf}}(s)\ \&\&\ b.\mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{isSubsetOf}}(s))\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(count)\ /\ sdb.size();}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classItemset_aaf4d824715835cf743eb1ce22267355f}{Itemset\+::is\+Subset\+Of()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classERMiner_ab29fae7cd2ca1f11e9df71c8e93f66cb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classERMiner_a3a0d8dbcefef4d07c6fe4a4b59310aed}\index{ERMiner@{ERMiner}!fit@{fit}}
+\index{fit@{fit}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{fit()}{fit()}}
+{\footnotesize\ttfamily \label{classERMiner_a3a0d8dbcefef4d07c6fe4a4b59310aed} 
+void ERMiner\+::fit (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{sdb}{}\end{DoxyParamCaption})}
+
+
+
+Fits the \doxylink{classERMiner}{ERMiner} model to a sequence database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdb} & The sequence database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classERMiner_a462dbef0998f4e8cdef50323810d28a9}\index{ERMiner@{ERMiner}!getSingleConsequent@{getSingleConsequent}}
+\index{getSingleConsequent@{getSingleConsequent}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{getSingleConsequent()}{getSingleConsequent()}}
+{\footnotesize\ttfamily \label{classERMiner_a462dbef0998f4e8cdef50323810d28a9} 
+bool ERMiner\+::get\+Single\+Consequent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the single consequent mode is enabled. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if single consequent mode is enabled; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{classERMiner_a03c2416d8647b3e534fa15935e17676d}\index{ERMiner@{ERMiner}!getValidRules@{getValidRules}}
+\index{getValidRules@{getValidRules}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{getValidRules()}{getValidRules()}}
+{\footnotesize\ttfamily \label{classERMiner_a03c2416d8647b3e534fa15935e17676d} 
+std\+::set$<$ \mbox{\hyperlink{classRule}{Rule}} $>$ ERMiner\+::get\+Valid\+Rules (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the set of valid rules. 
+
+\begin{DoxyReturn}{Returns}
+A set of valid rules. 
+\end{DoxyReturn}
+\Hypertarget{classERMiner_a06e8e4bbbb88973f4588858d6e90f916}\index{ERMiner@{ERMiner}!rulesToCsv@{rulesToCsv}}
+\index{rulesToCsv@{rulesToCsv}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{rulesToCsv()}{rulesToCsv()}}
+{\footnotesize\ttfamily \label{classERMiner_a06e8e4bbbb88973f4588858d6e90f916} 
+void ERMiner\+::rules\+To\+Csv (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{csv\+File}{}\end{DoxyParamCaption}) const}
+
+
+
+Exports the valid rules to a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em csv\+File} & The path to the output CSV file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classERMiner_a503d7c483bf79ccc658f9bfae91e3e59}\index{ERMiner@{ERMiner}!\_left\_store@{\_left\_store}}
+\index{\_left\_store@{\_left\_store}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_left\_store}{\_left\_store}}
+{\footnotesize\ttfamily \label{classERMiner_a503d7c483bf79ccc658f9bfae91e3e59} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{classItemset}{Itemset}}, std\+::set$<$\mbox{\hyperlink{classRule}{Rule}}$>$ $>$ ERMiner\+::\+\_\+left\+\_\+store\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Left store for managing equivalence classes during the left search. 
+
+Maps itemsets to their corresponding rules. 
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+\Hypertarget{classERMiner_adc8782d81239b340a41c2eda4a9e17f8}\index{ERMiner@{ERMiner}!\_SCM@{\_SCM}}
+\index{\_SCM@{\_SCM}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{\_SCM}{\_SCM}}
+{\footnotesize\ttfamily \label{classERMiner_adc8782d81239b340a41c2eda4a9e17f8} 
+std\+::map$<$std\+::pair$<$int, int$>$, double$>$ ERMiner\+::\+\_\+\+SCM\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Support count map for item pairs. 
+
+Stores the co-\/occurrence support of pairs of items. 
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+\Hypertarget{classERMiner_a77f099054bf11c9621e8f3be1a28e458}\index{ERMiner@{ERMiner}!minconf@{minconf}}
+\index{minconf@{minconf}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{minconf}{minconf}}
+{\footnotesize\ttfamily \label{classERMiner_a77f099054bf11c9621e8f3be1a28e458} 
+double ERMiner\+::minconf\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum confidence threshold. 
+
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+\Hypertarget{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb}\index{ERMiner@{ERMiner}!minsup@{minsup}}
+\index{minsup@{minsup}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{minsup}{minsup}}
+{\footnotesize\ttfamily \label{classERMiner_afb21ba50fcac3d86eeaebfc4180a5cfb} 
+double ERMiner\+::minsup\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum support threshold. 
+
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+\Hypertarget{classERMiner_a53c0216edd36c4d55777435d42dd33dc}\index{ERMiner@{ERMiner}!single\_consequent@{single\_consequent}}
+\index{single\_consequent@{single\_consequent}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{single\_consequent}{single\_consequent}}
+{\footnotesize\ttfamily \label{classERMiner_a53c0216edd36c4d55777435d42dd33dc} 
+bool ERMiner\+::single\+\_\+consequent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether to generate rules with a single consequent item. 
+
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+\Hypertarget{classERMiner_a6fc150eb669254dba5140d3558af8558}\index{ERMiner@{ERMiner}!valid\_rules@{valid\_rules}}
+\index{valid\_rules@{valid\_rules}!ERMiner@{ERMiner}}
+\doxysubsubsection{\texorpdfstring{valid\_rules}{valid\_rules}}
+{\footnotesize\ttfamily \label{classERMiner_a6fc150eb669254dba5140d3558af8558} 
+std\+::set$<$\mbox{\hyperlink{classRule}{Rule}}$>$ ERMiner\+::valid\+\_\+rules\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of valid rules discovered by the algorithm. 
+
+
+
+Definition at line \mbox{\hyperlink{erminer_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{erminer_8hpp_source}{erminer.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{erminer_8hpp}{erminer.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,1507 @@
+AutoGen Definitions dummy;
+class = {
+  cp-id     = 'classERMiner';
+  cp-name   = 'ERMiner';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a6d336431f767c59fa3d403e287cd360d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ERMiner';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'minsup';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'minconf';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'single_consequent';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+false
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '80';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Constructor for the ERMiner class.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param minsup Minimum support threshold.
+@param minconf Minimum confidence threshold.
+@param single_consequent Whether to generate rules with a single consequent (default: false).
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a89ab5ae76f9af3f0d71e2bb91952f3bd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< Itemset, std::set< Rule > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_findLeftEquivalenceClasses';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'i';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::set< Rule > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rules';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Finds left equivalence classes for a given rule size.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param i The size of the antecedent.
+@param rules The set of rules to process.
+@param sdb The sequence database.
+@return A map of itemsets to their corresponding left equivalence class rules.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a1c25100c42dbb2b1a6c9e28fda8591fb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< Itemset, std::set< Rule > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_findRightEquivalenceClasses';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'i';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::set< Rule > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rules';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '117';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Finds right equivalence classes for a given rule size.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param i The size of the consequent.
+@param rules The set of rules to process.
+@param sdb The sequence database.
+@return A map of itemsets to their corresponding right equivalence class rules.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a9cc6dd229602ea45476d73b9388fda78';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::pair< std::map< Itemset, std::set< Rule > >, std::map< Itemset, std::set< Rule > > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_firstScan';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '125';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Performs the first scan of the sequence database to initialize equivalence classes.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb The sequence database.
+@return A pair of maps containing left and right equivalence classes.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a2f33d276ff9672cc59387e7b877ae9a9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_leftSearch';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::set< Rule > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'leq';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '133';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Conducts a left equivalence class search.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param leq The left equivalence class rules to process.
+@param sdb The sequence database.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a69d576b2a50b65a3d750155aacf46b84';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_rightSearch';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::set< Rule > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'req';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '140';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Conducts a right equivalence class search.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param req The right equivalence class rules to process.
+@param sdb The sequence database.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a3a0d8dbcefef4d07c6fe4a4b59310aed';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fit';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '146';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Fits the ERMiner model to a sequence database.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb The sequence database.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a06e8e4bbbb88973f4588858d6e90f916';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'rulesToCsv';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::string &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'csvFile';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '152';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Exports the valid rules to a CSV file.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param csvFile The path to the output CSV file.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a03c2416d8647b3e534fa15935e17676d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::set< Rule >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getValidRules';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '158';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the set of valid rules.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A set of valid rules.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1a462dbef0998f4e8cdef50323810d28a9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getSingleConsequent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '164';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Checks whether the single consequent mode is enabled.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return <tt>true</tt> if single consequent mode is enabled; otherwise, <tt>false</tt>.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-static-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classERMiner_1ab29fae7cd2ca1f11e9df71c8e93f66cb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'cooccurs';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'a';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'b';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '90';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes the co-occurrence of two itemsets in a sequence database.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param a The first itemset.
+@param b The second itemset.
+@param sdb The sequence database.
+@return The co-occurrence support value.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1afb21ba50fcac3d86eeaebfc4180a5cfb';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'minsup';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '44';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Minimum support threshold.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1a77f099054bf11c9621e8f3be1a28e458';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'minconf';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '49';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Minimum confidence threshold.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1a53c0216edd36c4d55777435d42dd33dc';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'single_consequent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '54';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Whether to generate rules with a single consequent item.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1a503d7c483bf79ccc658f9bfae91e3e59';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::unordered_map< Itemset, std::set< Rule > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_left_store';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '60';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Left store for managing equivalence classes during the left search.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Maps itemsets to their corresponding rules.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1a6fc150eb669254dba5140d3558af8558';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::set< Rule >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'valid_rules';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '65';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Set of valid rules discovered by the algorithm.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classERMiner_1adc8782d81239b340a41c2eda4a9e17f8';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< std::pair< int, int >, double >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_SCM';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Support count map for item pairs.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Stores the co-occurrence support of pairs of items.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+  cp-fileline  = '39';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Implements the ERMiner algorithm for efficient rule extraction.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The ERMiner class uses equivalence class-based search to mine association rules from
+         sequence databases, with customizable support and confidence thresholds.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'ERMiner';
+        node-link = {
+          node-link-id = 'classERMiner';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+struct = {
+  cp-id     = 'structstd_1_1hash_3_01Itemset_01_4';
+  cp-name   = 'std::hash< Itemset >';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'structstd_1_1hash_3_01Itemset_01_4_1a41da9ffc5ac52e4c6857365a80ac5584';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+size_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator()';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'itemset';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '122';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Hashes an Itemset instance.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param itemset The Itemset to hash.
+@return The hash value of the Itemset.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+  cp-fileline  = '116';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'std::hash< Itemset >';
+        node-link = {
+          node-link-id = 'structstd_1_1hash_3_01Itemset_01_4';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'structstd_1_1hash_3_01Rule_01_4';
+  cp-name   = 'std::hash< Rule >';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'structstd_1_1hash_3_01Rule_01_4_1a5a45147f697c7cd7e1d20c1ef4c8753c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+size_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator()';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Rule &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rule';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '174';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes the hash value of a Rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param rule The rule to hash.
+@return The computed hash value.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+  cp-fileline  = '168';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'std::hash< Rule >';
+        node-link = {
+          node-link-id = 'structstd_1_1hash_3_01Rule_01_4';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+class = {
+  cp-id     = 'classItemset';
+  cp-name   = 'Itemset';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classstd_1_1set';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a5d09c258cd26568e9904b92a3722c5c9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Itemset';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '45';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Default constructor for an empty Itemset.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Initializes an empty set and an empty map of occurrences.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a5fadb33bad713b28e8b7cc506ef91513';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Itemset';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< int > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'elements';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::map< int, std::pair< int, int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'initOccurrences';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+{}
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '52';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Constructs an Itemset from a vector of integers.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param elements A vector of integers to initialize the itemset.
+@param initOccurrences Optional map of initial occurrences.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1acc8325b8fe7289c6662465361aa98942';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::size_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'hash';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '61';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes the hash value for the Itemset.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return The computed hash value.
+ \ilinebr\ilinebr Combines the hash values of all elements in the itemset.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'itemset_8hpp_1a41da9ffc5ac52e4c6857365a80ac5584';
+        sec-mem-ref-line = '122';
+        sec-mem-ref-name = 'std::hash< Itemset >::operator()';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a0b4793caa43082fe7a9f8544a7b303bf';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'computeOccurrences';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '68';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes occurrences of the itemset in a sequence database.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+@throw std::logic_error if the Itemset is empty.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a2ba1c370664cc6d1ce3eb73a5a5c391b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< int, std::pair< int, int > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'updateOccurrences';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'item';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '76';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Updates the occurrences by adding a new item.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param item The item to add.
+@param sdb The sequence database.
+@return A map of updated occurrences.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1abb2b162418256fc4acb031e0d9247e33';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'printOccurrences';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '82';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Prints the occurrences for debugging purposes.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Outputs the sequence ID and the range of occurrences for each sequence.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a4b8735c1b8f15e7245b8e69557e1a8d3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'toString';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '88';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Converts the Itemset to a string representation.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A string representation of the Itemset.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1a9ac544d3b2d78bbff0db70768c3e66c8';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< int, std::pair< int, int > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getOccurrences';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '94';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the occurrences map.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A copy of the map storing the occurrences.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1aaf4d824715835cf743eb1ce22267355f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isSubsetOf';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< int > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sequence';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '101';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Checks if the Itemset is a subset of a given sequence.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sequence A sequence of integers.
+@return <tt>true</tt> if the Itemset is a subset of the sequence; otherwise, <tt>false</tt>.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'erminer_8hpp_1ab29fae7cd2ca1f11e9df71c8e93f66cb';
+        sec-mem-ref-line = '90';
+        sec-mem-ref-name = 'ERMiner::cooccurs';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classItemset_1aa8881ac27c78f410eeff710c931370bd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::vector< int >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'toSortedVector';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Converts the Itemset to a sorted vector.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A vector containing the sorted elements of the Itemset.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classItemset_1a036ab0e1872465af684f76e103d8bf00';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::map< int, std::pair< int, int > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'occurrences';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+      sec-mem-desc-line = '38';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Map storing item occurrences within sequences.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ The key represents the sequence ID, while the value is a pair of integers
+         representing the first and last positions of the itemset in the sequence.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+  cp-fileline  = '31';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Represents a set of items with additional functionality for sequence analysis.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The Itemset class is an extension of <tt>std::set\<int\></tt> with additional methods 
+         for managing occurrences, generating string representations, and computing 
+         relationships with sequences.
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Itemset';
+        node-link = {
+          node-link-id = 'classItemset';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'std::set< int >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Itemset';
+        node-link = {
+          node-link-id = 'classItemset';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'std::set< int >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classRule';
+  cp-name   = 'Rule';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a8c0e77f1deffd0392aa23740f87d878e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Rule';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'ant';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'cons';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '65';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Constructor to initialize a rule with antecedent and consequent.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param ant The antecedent of the rule.
+@param cons The consequent of the rule.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1aaca5b443c67fbf707b8990e0a4fc64be';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'toString';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '72';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Generates a string representation of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A string in the format <tt>antecedent -\> consequent</tt>.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a41f7ccd767a57ead220c52f3f47ca0c3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::size_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'hash';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '78';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes a hash value for the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return The hash value.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'rules_8hpp_1a5a45147f697c7cd7e1d20c1ef4c8753c';
+        sec-mem-ref-line = '174';
+        sec-mem-ref-name = 'std::hash< Rule >::operator()';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1ac943a51d764a26ec9b878a216f1d24fd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'findSequencesWithRule';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '84';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Finds the sequences in which the rule is applicable.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1acbed876525ee7393f0664c90143a6967';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'computeSupport';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '91';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes the support of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+ \ilinebr\ilinebr The support is the proportion of sequences in the database that satisfy the rule.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a497982ff032d0906cba7f67cf2538f80';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'computeConfidence';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '99';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Computes the confidence of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+ \ilinebr\ilinebr The confidence is the ratio of sequences containing both the antecedent and consequent
+         to sequences containing the antecedent.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1ae0ebaaefda27c581ceb342b23f3448ca';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isFrequent';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'minsup';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Checks if the rule is frequent based on a minimum support threshold.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+@param minsup The minimum support threshold.
+@return <tt>true</tt> if the rule's support is greater than or equal to the threshold; otherwise, <tt>false</tt>.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a06f0e00e1cd4e180a8a37d954b030892';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isValid';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const std::vector< std::vector< int > > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'sdb';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'minsup';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'minconf';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '116';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Validates the rule based on minimum support and confidence thresholds.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param sdb A sequence database represented as a vector of integer vectors.
+@param minsup The minimum support threshold.
+@param minconf The minimum confidence threshold.
+@return <tt>true</tt> if the rule meets both thresholds; otherwise, <tt>false</tt>.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1abb52955f499b90910fe05fadf769d5bd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'printRule';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '121';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Prints the rule and its metrics (support and confidence) for debugging.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a0eb1dc2a9a54b4d594a02dc2bd4035ff';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getSupport';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '127';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the support value of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return The support value.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1abc73a9cf900fda624bb6571862ef29a6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getConfidence';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '133';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the confidence value of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return The confidence value.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1ae18a9a2ea167b5f914c4336c5156151f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::vector< int >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getSequencesWithRule';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '139';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the list of sequence IDs where the rule applies.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A vector of sequence IDs.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a45a0416e852abfb6791d629693cbd3e9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getAntecedent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '145';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the antecedent of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A const reference to the antecedent.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1a7c9b1f4d90a5d19928956f6bb04ca807';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const Itemset &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getConsequent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '151';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Retrieves the consequent of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return A const reference to the consequent.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classRule_1abb4f10410c860ccef0ffb525eb9a8a2d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator<';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const Rule &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'other';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '159';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Compares two rules for ordering.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param other The rule to compare against.
+@return <tt>true</tt> if this rule is less than the other; otherwise, <tt>false</tt>.
+ \ilinebr\ilinebr Comparison is based on lexicographical ordering of antecedent and consequent.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classRule_1aa8eba6c9965df6ed0b8ba2c970e3419a';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Itemset
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'antecedent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The antecedent of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classRule_1aa43a0b3bc463247dd4c2f94cf62aaf2e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Itemset
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'consequent';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '40';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The consequent of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classRule_1a7451cbdae3e89874837aaa4822c3d27f';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'support';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= -1.0
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '46';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The support value of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Stored as a mutable double to allow lazy computation.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classRule_1a6422405ae23ce693c46e154fb1bbd53e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'confidence';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= -1.0
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '52';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+The confidence value of the rule.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+ Stored as a mutable double to allow lazy computation.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classRule_1ab5662a4071037678e58220f07430092f';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+std::vector< int >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'sequences_with_rule';
+      sec-mem-desc-file = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+      sec-mem-desc-line = '57';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+List of sequence IDs where the rule applies.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+  cp-fileline  = '30';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+Represents an association rule with methods for support, confidence, and validation.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+ The Rule class manages an antecedent and a consequent (both <tt>Itemset</tt> objects), 
+         with functions to compute the rule's validity in a sequence database.
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'Itemset';
+        node-link = {
+          node-link-id = 'classItemset';
+        };
+        node-child = {
+          child-id = '3';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Rule';
+        node-link = {
+          node-link-id = 'classRule';
+        };
+        node-child = {
+          child-id = '2';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+-antecedent
+-consequent
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 3;
+        node-label = 'std::set< int >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classstd_1_1set';
+  cp-name   = 'std::set';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'classItemset';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+  cp-fileline  = '31';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'Itemset< int >';
+        node-link = {
+          node-link-id = 'classItemset';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'std::set';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'std::set';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+file = {
+  file-id   = 'erminer_8hpp';
+  file-name = 'erminer.hpp';
+  file-full-name  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/erminer.hpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Declaration of the ERMiner class for extracting association rules from sequence databases.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ The ERMiner algorithm is an efficient method for mining association rules, based on the approach
+            described in ERMiner: sequential rule mining using equivalence classes by Fournier-Viger et. al. It identifies frequent and valid rules by leveraging
+            equivalence class search strategies.
+   @version 1.0.0
+   @date 2024-12-14
+   @authors Richard Staszkiewicz
+   @note This class is based on the article:
+   @icode 
+   Fournier-Viger, P., Gueniche, T., Zida, S., & Tseng, V. S. (2014). ERMiner: sequential rule mining using equivalence classes. In Advances in Intelligent Data Analysis XIII : 13th International Symposium, IDA 2014, Leuven, Belgium, October 30–November 1, 2014. Proceedings 13 (pp. 108-119). Springer International Publishing.
+   @endicode 
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'itemset_8hpp';
+  file-name = 'itemset.hpp';
+  file-full-name  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Declaration of the Itemset class for handling itemsets and their occurrences.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ The Itemset class extends the <tt>std::set\<int\></tt> to provide additional functionality,
+         such as computing occurrences within sequences, generating string representations,
+         and checking subset relationships.
+@version 1.0.0
+@date 2024-12-14
+@author Richard Staszkiewicz
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'rules_8hpp';
+  file-name = 'rules.hpp';
+  file-full-name  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/rules.hpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Declaration of the Rule class for association rule representation and evaluation.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ The Rule class models an association rule comprising an antecedent and a consequent,
+         with methods to compute support, confidence, and validate the rule based on minimum thresholds.
+@version 1.0.0
+@date 2024-12-14
+@author Richard Staszkiewicz
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'README_8md';
+  file-name = 'README.md';
+  file-full-name  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/README.md';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+  namespace = {
+    ns-id   = 'namespacestd';
+    ns-name = 'std';
+  ns-filename  = '/Users/richard/Documents/GitHub/WUT-MED-ERMiner-Implementation/include/itemset.hpp';
+  ns-fileline  = '111';
+  ns-briefdesc = <<_EnD_oF_dEf_TeXt_
+Provides a specialization of the <tt>std::hash</tt> template for the Itemset class.
+_EnD_oF_dEf_TeXt_;
+  ns-documentation = <<_EnD_oF_dEf_TeXt_
+Provides a specialization of the <tt>std::hash</tt> template for the Rule class.
+_EnD_oF_dEf_TeXt_;
+  };
