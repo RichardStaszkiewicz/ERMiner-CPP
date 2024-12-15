@@ -1,5 +1,0 @@
-<map id="include/rules.hpp" name="include/rules.hpp">
-<area shape="rect" id="Node000001" title="Declaration of the Rule class for association rule representation and evaluation." alt="" coords="12,5,132,31"/>
-<area shape="rect" id="Node000002" href="$erminer_8hpp.html" title="Declaration of the ERMiner class for extracting association rules from sequence databases." alt="" coords="5,79,139,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,46,75,79,69,79,69,46"/>
-</map>
