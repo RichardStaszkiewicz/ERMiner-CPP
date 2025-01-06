@@ -29,7 +29,7 @@ std::pair<std::map<Itemset, std::set<Rule>>, std::map<Itemset, std::set<Rule>>>
     for (const auto& s : sdb) {
         itemset.insert(s.begin(), s.end());
     }
-
+    if(debug) std::cout << "[_first_scan] Itemset loaded with (" << itemset.size() << ") elements..." <<std::endl;
     // Compute pair cooccurrences
     for (auto it1 = itemset.begin(); it1 != itemset.end(); ++it1) {
         for (auto it2 = std::next(it1); it2 != itemset.end(); ++it2) {
@@ -37,7 +37,8 @@ std::pair<std::map<Itemset, std::set<Rule>>, std::map<Itemset, std::set<Rule>>>
         }
     }
 
-    // Generate initial rules
+    if(debug) std::cout << "[_first_scan] Coocurance pairs computet with (" << _SCM.size() << ") elements..." <<std::endl;
+    // Generate initial rules (certainly does not need rules between oneself)
     std::set<Rule> rules11;
     for (auto it1 = itemset.begin(); it1 != itemset.end(); ++it1) {
         for (auto it2 = itemset.begin(); it2 != itemset.end(); ++it2) {
@@ -46,9 +47,11 @@ std::pair<std::map<Itemset, std::set<Rule>>, std::map<Itemset, std::set<Rule>>>
             }
         }
     }
+    if(debug) std::cout << "[_first_scan] Initial rules loaded with (" << rules11.size() << ") elements..." <<std::endl;
 
     // Filter frequent and valid rules
     std::set<Rule> frequent_rules11;
+    int i = 0;
     for (const auto& rule : rules11) {
         if (rule.isFrequent(sdb, minsup)) {
             frequent_rules11.insert(rule);
@@ -56,7 +59,10 @@ std::pair<std::map<Itemset, std::set<Rule>>, std::map<Itemset, std::set<Rule>>>
                 valid_rules.insert(rule);
             }
         }
+        if(debug && i % 100 == 0) std::cout << "[_first_scan] " << i << "/" << rules11.size() <<std::endl;
+        i++;
     }
+    if(debug) std::cout << "[_first_scan] Frequent rules loaded with (" << frequent_rules11.size() << ") elements..." <<std::endl;
 
     // Find equivalence classes
     auto leq = _findLeftEquivalenceClasses(1, frequent_rules11, sdb);
@@ -131,16 +137,21 @@ void ERMiner::_rightSearch(const std::set<Rule>& req, const std::vector<std::vec
 }
 
 void ERMiner::fit(const std::vector<std::vector<int>>& sdb) {
+    if(debug) std::cout << "Fitting started..." <<std::endl;
     auto [leq, req] = _firstScan(sdb);
+    if(debug) std::cout << "First scan finished with LEQ of size (" <<leq.size() << ") and REQ of size (" << req.size() << ")..." <<std::endl;
     if (!single_consequent) {
+        if(debug) std::cout << "Left searches to be performed: " << leq.size() <<std::endl;
         for (const auto& [_, H] : leq) {
             _leftSearch(H, sdb);
         }
     }
+    std::cout << "Right searches to be performed: " << req.size() <<std::endl;
     for (const auto& [_, J] : req) {
         _rightSearch(J, sdb);
     }
     if(!single_consequent) {
+        if(debug) std::cout << "Left searches to be performed: " << _left_store.size() <<std::endl;
         for(const auto& [_, K] : _left_store) {
             _leftSearch(K, sdb);
         }

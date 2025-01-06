@@ -54,6 +54,11 @@ private:
     bool single_consequent;
 
     /**
+     * @brief Debug flag enabeling logging from within the class
+     */
+    bool debug;
+
+    /**
      * @brief Left store for managing equivalence classes during the left search.
      * @details Maps itemsets to their corresponding rules.
      */
@@ -77,8 +82,8 @@ public:
      * @param minconf Minimum confidence threshold.
      * @param single_consequent Whether to generate rules with a single consequent (default: false).
      */
-    ERMiner(double minsup, double minconf, bool single_consequent = false)
-        : minsup(minsup), minconf(minconf), single_consequent(single_consequent) {}
+    ERMiner(double minsup, double minconf, bool single_consequent = false, bool debug = false)
+        : minsup(minsup), minconf(minconf), single_consequent(single_consequent), debug(debug) {}
 
     /**
      * @brief Computes the co-occurrence of two itemsets in a sequence database.

@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # ERMiner: A C++ Implementation for Rule Mining
 ERMiner is a C++ implementation of a frequent sequential rule mining algorithm. It is designed to efficiently discover frequent rules in sequential databases. The project supports operations such as equivalence class generation, rule validation, and exporting results to a CSV file.
 
