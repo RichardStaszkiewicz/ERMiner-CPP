@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-
-set(FLAGS -std=c++17 -O3 -Wall -g -I /usr/local/opt/llvm/include)
+# -g -O0 for debugging feature
+set(FLAGS -std=c++17 -g -O0 -Wall --std=c++17 -I /usr/local/opt/llvm/include)
 set(CMAKE_CXX_COMPILER clang++)
 add_compile_options(${FLAGS})
 project(ERMINER VERSION 0.1 LANGUAGES CXX)

@@ -146,7 +146,7 @@ void ERMiner::fit(const std::vector<std::vector<int>>& sdb) {
             _leftSearch(H, sdb);
         }
     }
-    std::cout << "Right searches to be performed: " << req.size() <<std::endl;
+    if(debug) std::cout << "Right searches to be performed: " << req.size() <<std::endl;
     for (const auto& [_, J] : req) {
         _rightSearch(J, sdb);
     }

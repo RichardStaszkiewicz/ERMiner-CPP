@@ -56,7 +56,7 @@ int main() {
 
         std::cout << "Loaded (" << data.size() << ") lines of data" <<std::endl;
          // Initialize the ERMiner model
-        ERMiner miner(MINSUP, MINCONF, false, true);
+        ERMiner miner(MINSUP, MINCONF, false, false);
 
         // for(int i = 0; i < data.size(); i++){
         //     std::cout << "[";
@@ -67,7 +67,7 @@ int main() {
         // Fit the model
         std::cout << "Fitting the model..." << std::endl;
         auto start = std::chrono::high_resolution_clock::now();
-        miner.fit(data);
+        miner.fit(data); 
         auto stop = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = stop - start;
 
