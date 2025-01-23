@@ -59,7 +59,7 @@ std::pair<std::map<Itemset, std::set<Rule>>, std::map<Itemset, std::set<Rule>>>
                 valid_rules.insert(rule);
             }
         }
-        if(debug && i % 100 == 0) std::cout << "[_first_scan] " << i << "/" << rules11.size() <<std::endl;
+        if(debug && (i % 100 == 0)) std::cout << "[_first_scan] " << i << "/" << rules11.size() <<std::endl;
         i++;
     }
     if(debug) std::cout << "[_first_scan] Frequent rules loaded with (" << frequent_rules11.size() << ") elements..." <<std::endl;

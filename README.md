@@ -146,11 +146,11 @@ The algorithm is based on a paper:
 ```
 
 If the current implementation is to be cited, please refer as:
-```bibtex
-@misc{Charles2013,
+```bibtex 
+@misc{ERMinerRS2025,
   author = {Richard Staszkiewicz},
   title = {ERMiner: Cpp},
-  year = {2024},
+  year = {2025  },
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/RichardStaszkiewicz/ERMiner-CPP}},
@@ -161,3 +161,6 @@ If the current implementation is to be cited, please refer as:
 ## Acknowledgements
 This project is inspired by the Python implementation of the ERMiner algorithm by [alessandroaere](https://github.com/alessandroaere) and aims to provide a more efficient C++ solution for rule mining.
 
+<!-- 
+the program might be working much slower because the Rules do not cache the antadescant and consequent as singletons. To be improved upon.
+-->

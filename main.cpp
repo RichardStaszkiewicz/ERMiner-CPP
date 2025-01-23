@@ -56,7 +56,7 @@ int main() {
 
         std::cout << "Loaded (" << data.size() << ") lines of data" <<std::endl;
          // Initialize the ERMiner model
-        ERMiner miner(MINSUP, MINCONF, false, false);
+        ERMiner miner(MINSUP, MINCONF, false, true);
 
         // for(int i = 0; i < data.size(); i++){
         //     std::cout << "[";
